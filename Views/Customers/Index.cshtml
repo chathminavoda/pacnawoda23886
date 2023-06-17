@@ -1,0 +1,124 @@
+﻿@model IEnumerable<ERPsystemproj.Models.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <style>
+        body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: darkblue;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color: lightcyan;
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <div class="sidebar">
+        <header style="color:white;padding-bottom:35px;padding-top:35px;font-size:large; padding-left:20px;padding-right:20px">Rontera</header>
+        <a href="../Dashboard/Index" >Dashboard</a>
+        <a href="../Customers/Index" class="active">Customer</a>
+        <a href="../Orders/Index">Order</a>
+        <a href="../Payments/Index">Payment</a>
+        <a href="../Storages/Index">Storage</a>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <header style="color:black;padding-bottom:35px;padding-top:35px;font-size:large; padding-left:20px;padding-right:20px;background-color:aliceblue">Good Morning </header>
+
+            
+            <div class="row-cols-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.contact)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.email)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.contact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.customerId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.customerId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.customerId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+                <p>
+                    <button type="button" class="btn btn-outline-primary">@Html.ActionLink("Create New", "Create")</button>
+                </p>
+
+            </div>
+        </div>
+        </div>
+
+</body>
+</html>

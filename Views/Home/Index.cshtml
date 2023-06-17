@@ -1,0 +1,167 @@
+﻿<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aguafina+Script" />
+<link rel="stylesheet" href="app.css" type="text/css" />
+<style>
+    .login-container {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .login-form-1 {
+        padding: 5%;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+        background-image: url('../../App_Data/Img/login.png'); background-repeat: no-repeat; background-size: contain;
+    }
+
+        .login-form-1 h3 {
+            text-align: center;
+            color: #333;
+        }
+
+    .login-form-2 {
+        padding: 5%;
+        background: #0062cc;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    }
+
+        .login-form-2 h3 {
+            text-align: center;
+            color: #fff;
+        }
+
+    .login-container form {
+        padding: 10%;
+    }
+
+    .btnSubmit {
+        width: 50%;
+        border-radius: 1rem;
+        padding: 1.5%;
+        border: none;
+        cursor: pointer;
+    }
+
+    .login-form-1 .btnSubmit {
+        font-weight: 600;
+        color: #fff;
+        background-color: #0062cc;
+    }
+
+    .login-form-2 .btnSubmit {
+        font-weight: 600;
+        color: #0062cc;
+        background-color: #fff;
+    }
+
+    .login-form-2 .ForgetPwd {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .login-form-1 .ForgetPwd {
+        color: #0062cc;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+</style>
+
+<body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-sm-6 login-form-1" >
+            
+            </div>
+            <div class="col-sm-6 login-form-2">
+                <h3>Rontera<br />ERP - System</h3>
+                
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Email *" value="" required/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Your Password *" value="" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="switch">
+                            <input type="checkbox" required>
+                            <span class="slider round" ></span>
+                        </label>
+                        Remember Me
+                        
+                        <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control" value="Login" onclick="location.href='@Url.Action("Index", "Dashboard")'"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
